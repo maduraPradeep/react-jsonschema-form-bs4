@@ -435,7 +435,15 @@ class App extends Component {
               <Form
                 schema={liveSettingsSchema}
                 formData={liveSettings}
-                onChange={this.setLiveSettings}>
+                onChange={this.setLiveSettings}
+                IconButtonComponent={({ type, className, icon, ...otherProps }) => <button
+                  type="button"
+                  className={`btn btn-${type} ${className}`}
+                  {...otherProps}>
+                  New
+            {/* <i className={`fas fa-${icon}`} /> */}
+                </button>}
+              >
                 <div />
               </Form>
             </div>
@@ -495,7 +503,15 @@ class App extends Component {
                   console.log(`Focused ${id} with value ${value}`)
                 }
                 transformErrors={transformErrors}
-                onError={log("errors")}>
+                onError={log("errors")}
+                IconButtonComponent={({ type, className, icon, ...otherProps }) => <button
+                  type="button"
+                  className={`btn btn-${type} ${className}`}
+                  {...otherProps}>
+                  {icon}
+            <i className={`fas fa-${icon}`} />
+                </button>}
+              >
                 <div className="row">
                   <div className="col-3">
                     <button className="btn btn-primary" type="submit">
