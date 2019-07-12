@@ -7,6 +7,7 @@ See the [main repository](https://github.com/mozilla-services/react-jsonschema-f
 
 This version is based on react-jsonschema-form v1.5.0
 
+
 ## Installation
 
     npm install react-jsonschema-form-bs4
@@ -19,11 +20,31 @@ If you find a bug that is present in the main version (maintained by mozilla-ser
 
 ## Usage with Bootstrap 4
 
+This is a fork of https://github.com/peterkelly/react-jsonschema-form-bs4 which supports Bootstrap 4. 
+
 Since Bootstrap 4 no longer includes Glyphicons, you need to use [Font
 Awesome](https://origin.fontawesome.com/) instead. You can do this by adding
 the following to your index.html file:
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+
+
+### Why we have created this?
+The original work does not support custom buttons UI. You can provide your own button component instead of the default as a property.
+
+```javascript
+<Form
+    IconButtonComponent={({ type, className, icon, ...otherProps }) => <button
+    type="button"
+    className={`btn btn-${type} ${className}`}
+    {...otherProps}>
+    <FontAwesome icon={icon} />
+    </button>}
+/>
+                                                    
+```
+
+
 
 ## License
 Apache 2
